@@ -1,1 +1,1 @@
-# Scaffolding-L2-Writing-Autonomy-Systematic-Review-and-Meta-analysis
+This repository contains the complete codebook and coding results for all studies included in the systematic review and meta-analysis examining pedagogical scaffolding for second language writing autonomy.
