@@ -82,13 +82,13 @@ drive_deauth()
 gs4_deauth()
 
 # Authenticate for Google Drive
-drive_auth(email = "snowxuewang297@gmail.com", cache = FALSE)
+drive_auth(email = "xxx", cache = FALSE)
 
 # Find the spreadsheet ID
 id <- drive_find(pattern = "L2 write autonomy study coding", type = "spreadsheet")$id[1]
 
 # Authenticate for Google Sheets
-gs4_auth(email = "snowxuewang297@gmail.com", cache = FALSE)
+gs4_auth(email = "xxx", cache = FALSE)
 
 
 # load findings and studies
@@ -224,7 +224,6 @@ df$AcademicOutcome[which(df$`AcademicOutcomes`==1)] <- 1
 table(df$`AcademicOutcomes`, df$AcademicOutcome, useNA = "ifany")
 
 df$CognitiveOutcome <- 0
-#df$CognitiveOutcome[which(df$`CognitiveOutcomes`==1)] <- 1
 df$CognitiveOutcome[which(df$`CognitiveOutcomes` == 1 & 
                             df$MetacognitiveOutcomes != 1 & 
                             df$MotivationalOutcomes != 1 & 
@@ -233,7 +232,6 @@ df$CognitiveOutcome[which(df$`CognitiveOutcomes` == 1 &
 table(df$`CognitiveOutcomes`, df$CognitiveOutcome, useNA = "ifany")
 
 df$MetacognitiveOutcome <- 0
-#df$MetacognitiveOutcome[which(df$`MetacognitiveOutcomes`==1)] <- 1
 df$MetacognitiveOutcome[which(df$`MetacognitiveOutcomes` == 1 &
                             df$CognitiveOutcomes != 1 &
                             df$MotivationalOutcomes != 1 &
@@ -242,7 +240,6 @@ df$MetacognitiveOutcome[which(df$`MetacognitiveOutcomes` == 1 &
 table(df$`MetacognitiveOutcomes`, df$MetacognitiveOutcome, useNA = "ifany")
 
 df$MotivationalOutcome <- 0
-#df$MotivationalOutcome[which(df$`MotivationalOutcomes`==1)] <- 1
 df$MotivationalOutcome[which(df$`MotivationalOutcomes` == 1 & 
                                 df$CognitiveOutcomes != 1 & 
                                 df$MetacognitiveOutcomes != 1 & 
@@ -251,7 +248,6 @@ df$MotivationalOutcome[which(df$`MotivationalOutcomes` == 1 &
 table(df$`MotivationalOutcomes`, df$MotivationalOutcome, useNA = "ifany")
 
 df$SocialOutcome <- 0
-#df$SocialOutcome[which(df$`SocialOutcomes`==1)] <- 1
 df$SocialOutcome[which(df$`SocialOutcomes` == 1 & 
                                df$CognitiveOutcomes != 1 & 
                                df$MetacognitiveOutcomes != 1 & 
@@ -260,7 +256,6 @@ df$SocialOutcome[which(df$`SocialOutcomes` == 1 &
 table(df$`SocialOutcomes`, df$SocialOutcome, useNA = "ifany")
 
 df$BehaviorOutcome <- 0
-#df$BehaviorOutcome[which(df$`BehavioralOutcomes`==1)] <- 1
 df$BehaviorOutcome[which(df$`BehavioralOutcomes` == 1 & 
                          df$CognitiveOutcomes != 1 & 
                          df$MetacognitiveOutcomes != 1 & 
@@ -412,33 +407,7 @@ terms <- c("Longerthan12weeks", "ResearcherDevelopedMeasurement",
 # use centered versions
 terms.c <- paste(terms, ".c", sep = "")
 
-## with interaction
-#format moderators into formula (an R-specific type)
-# intervention1 <- paste(c("Technology"), ".c", sep = "")
-# outcome1 <- paste(c("MetacognitiveOutcome"), ".c", sep = "")
-# interact1 <- c()
-# for(i in 1:length(intervention1)) {
-#  for(j in 1:length(outcome1)) {
-#    term <- paste(intervention1[i], outcome1[j], sep = "*")
-#    interact1 <- c(interact1, term)
-#  }
-# }
-# 
-# intervention2 <- paste(c("PD"), ".c", sep = "")
-# outcome2 <- paste(c("AcademicOutcome"), ".c", sep = "")
-# interact2 <- c()
-# for(i in 1:length(intervention2)) {
-#   for(j in 1:length(outcome2)) {
-#     term <- paste(intervention2[i], outcome2[j], sep = "*")
-#     interact2 <- c(interact2, term)
-#   }
-# }
-# 
-# interact <- c(interact1)
-# formula <- reformulate(termlabels = c(terms.c, interact))
-# formula
 
-## without interaction
 formula <- reformulate(termlabels = c(terms.c))
 
 MVfull <- rma.mv(yi=ES, #effect size
@@ -464,7 +433,7 @@ MVfull.coef
 # Forest plot with RVE
 library(robumeta)
 
-setwd("/Users/xuewang/Desktop/Desktop - Xue’s MacBook Pro/Research/Sally/L2 writing autonomy meta")
+setwd("xxx")
 
 df$label <- paste(df$Study)
 
