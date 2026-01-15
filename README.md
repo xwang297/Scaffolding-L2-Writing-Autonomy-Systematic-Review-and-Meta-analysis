@@ -1,1 +1,1 @@
-This repository contains the complete codebook and coding results for all studies included in the systematic review and meta-analysis examining pedagogical scaffolding for second language writing autonomy.
+This repository contains the complete coding results for all studies included in the systematic review and meta-analysis on pedagogical scaffolding for second language writing autonomy. The R code used for the meta-regression and moderator analyses is also provided.
